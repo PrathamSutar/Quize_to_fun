@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:quiz_to_fun/screens/login.dart';
+import 'package:quiz_to_fun/screens/registerscreen.dart';
 
 class splash extends StatefulWidget {
   const splash({super.key});

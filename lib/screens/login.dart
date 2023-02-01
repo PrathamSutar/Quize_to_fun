@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:quiz_to_fun/screens/registerscreen.dart';
 import 'package:quiz_to_fun/widgets/cutomtext.dart';
 
 import '../colors/colors.dart';
@@ -160,7 +161,9 @@ class login extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            InkWell(
+                            InkWell(onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => registerscreen(),));
+                            },
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Colors.black,
