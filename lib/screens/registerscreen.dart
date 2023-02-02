@@ -6,35 +6,42 @@ import '../colors/colors.dart';
 import '../widgets/cutomtext.dart';
 import '../widgets/textfield.dart';
 
-
 class registerscreen extends StatelessWidget {
   const registerscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: backgroundcolor,
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(8.0),
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                Container(
-                  height: 120,
-                  width: 208,
-                  child: Image.asset(
-                    "Assets/images/templogo.png",
-                    
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 30, bottom: 10),
+                  child: Container(
+                    height: 100,
+                    width: 208,
+                    child: Image.asset(
+                      "Assets/images/templogo.png",
+                    ),
                   ),
                 ),
-                
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-customtext(fontsize: 14, color: purpulecolor, fontWeight: FontWeight.w400, fontfamily: 'Inter', text: "Step 1/3"),
-
+                    customtext(
+                        fontsize: 14,
+                        color: purpulecolor,
+                        fontWeight: FontWeight.w400,
+                        fontfamily: 'Inter',
+                        text: "Step 1/3"),
+                    SizedBox(
+                      height: 5,
+                    ),
                     customtext(
                         text: "Register",
                         fontsize: 24,
@@ -45,15 +52,15 @@ customtext(fontsize: 14, color: purpulecolor, fontWeight: FontWeight.w400, fontf
                       height: 5,
                     ),
                     customtext(
-                      
                       color: textcolor,
-                      text: "We love to get to know each other, tell us a little about yourself.",
+                      text:
+                          "We love to get to know each other, tell us a little about yourself.",
                       fontWeight: FontWeight.w400,
                       fontfamily: 'Inter',
                       fontsize: 16,
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     customtext(
                         fontsize: 12,
@@ -68,7 +75,7 @@ customtext(fontsize: 14, color: purpulecolor, fontWeight: FontWeight.w400, fontf
                       hinttext: "Jhon Alex",
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     customtext(
                         fontsize: 12,
@@ -80,8 +87,8 @@ customtext(fontsize: 14, color: purpulecolor, fontWeight: FontWeight.w400, fontf
                       height: 10,
                     ),
                     customtextfield(hinttext: "Enter Your User Name"),
-                     SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 15,
                     ),
                     customtext(
                         fontsize: 12,
@@ -99,7 +106,13 @@ customtext(fontsize: 14, color: purpulecolor, fontWeight: FontWeight.w400, fontf
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => login(),),),
+                        InkWell(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => login(),
+                            ),
+                          ),
                           child: customtext(
                               fontsize: 14,
                               color: purpulecolor,
@@ -126,12 +139,17 @@ customtext(fontsize: 14, color: purpulecolor, fontWeight: FontWeight.w400, fontf
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                 ),
-                                backgroundColor: MaterialStateProperty.all(
-                                    purpulecolor),
+                                backgroundColor:
+                                    MaterialStateProperty.all(purpulecolor),
                               ),
-onPressed: () {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => passwordscreen(),));
-},                              child: Text("Proceed")),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => passwordscreen(),
+                                    ));
+                              },
+                              child: Text("Proceed")),
                         ),
                         SizedBox(height: 20),
                         customtext(
@@ -211,7 +229,6 @@ onPressed: () {
                             ),
                           ],
                         ),
-                        
                       ],
                     ),
                   ],

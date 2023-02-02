@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:quiz_to_fun/screens/forgotpassOTP.dart';
+import 'package:quiz_to_fun/screens/forgotpasswordscreen.dart';
 import 'package:quiz_to_fun/screens/registerscreen.dart';
 import 'package:quiz_to_fun/widgets/cutomtext.dart';
 
@@ -15,23 +17,21 @@ class login extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundcolor,
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(8.0),
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                Container(
-                  height: 130,
-                  width: 208,
-                  child: Image.asset(
-                    "Assets/images/templogo.png",
-                    height: 100,
-                    width: 208,
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 60, bottom: 30),
+                  child: Container(
+                    child: Image.asset(
+                      "Assets/images/templogo.png",
+                      height: 100,
+                      width: 208,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,38 +86,43 @@ class login extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        customtext(
-                            fontsize: 14,
-                            color: purpulecolor,
-                            fontWeight: FontWeight.w700,
-                            fontfamily: 'Nunito Sans',
-                            text: "Forgot Password"),
+                        InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => forgotpasswordscreen(),)),
+                          child: customtext(
+                              fontsize: 14,
+                              color: purpulecolor,
+                              fontWeight: FontWeight.w700,
+                              fontfamily: 'Nunito Sans',
+                              text: "Forgot Password"),
+                        ),
                       ],
                     ),
                     SizedBox(
                       height: 68,
                     ),
-                    Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(),
-                          height: 50,
-                          width: 350,
-                          child: ElevatedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ),
+                    Center(
+                      child: Container(
+                        decoration: BoxDecoration(),
+                        height: 50,
+                        width: 350,
+                        child: ElevatedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                backgroundColor: MaterialStateProperty.all(
-                                    Color(0xFF313033)),
                               ),
-                              onPressed: () {},
-                              child: Text("Continue")),
-                        ),
-                        SizedBox(height: 20),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Color(0xFF313033)),
+                            ),
+                            onPressed: () {},
+                            child: Text("Continue")),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
                         customtext(
                             fontsize: 14,
                             color: whitecolor,
@@ -127,85 +132,92 @@ class login extends StatelessWidget {
                         SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                border: Border.all(
-                                    width: 1, color: Color(0xFF605D62)),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            border:
+                                Border.all(width: 1, color: Color(0xFF605D62)),
+                          ),
+                          height: 50,
+                          width: 160,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                  height: 20,
+                                  width: 20,
+                                  child: Image.asset(
+                                    "Assets/images/fblogo.png",
+                                  )),
+                              SizedBox(
+                                width: 5,
                               ),
-                              height: 50,
-                              width: 160,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                      height: 20,
-                                      width: 20,
-                                      child: Image.asset(
-                                        "Assets/images/fblogo.png",
-                                      )),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  customtext(
-                                      fontsize: 14,
-                                      color: whitecolor,
-                                      fontWeight: FontWeight.w400,
-                                      fontfamily: 'Inter',
-                                      text: "Facebook"),
-                                ],
-                              ),
-                            ),
-                            InkWell(onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => registerscreen(),));
-                            },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
-                                  border: Border.all(
-                                      width: 1, color: Color(0xFF605D62)),
-                                ),
-                                height: 50,
-                                width: 160,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                        "Assets/images/google_logo.png"),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    customtext(
-                                        fontsize: 14,
-                                        color: whitecolor,
-                                        fontWeight: FontWeight.w400,
-                                        fontfamily: 'Inter',
-                                        text: "Google"),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
+                              customtext(
+                                  fontsize: 14,
+                                  color: whitecolor,
+                                  fontWeight: FontWeight.w400,
+                                  fontfamily: 'Inter',
+                                  text: "Facebook"),
+                            ],
+                          ),
                         ),
-                        SizedBox(
-                          height: 30,
+                        InkWell(
+                          
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                              border: Border.all(
+                                  width: 1, color: Color(0xFF605D62)),
+                            ),
+                            height: 50,
+                            width: 160,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset("Assets/images/google_logo.png"),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                customtext(
+                                    fontsize: 14,
+                                    color: whitecolor,
+                                    fontWeight: FontWeight.w400,
+                                    fontfamily: 'Inter',
+                                    text: "Google"),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                        customtext(
-                            fontsize: 14,
-                            color: purpulecolor,
-                            fontWeight: FontWeight.w600,
-                            fontfamily: 'Inter',
-                            text: "Don’t have an account yet ? Register"),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => registerscreen(),)),
+                          child: customtext(
+                              fontsize: 14,
+                              color: purpulecolor,
+                              fontWeight: FontWeight.w600,
+                              fontfamily: 'Inter',
+                              text: "Don’t have an account yet ? Register"),
+                        ),
                       ],
                     ),
                   ],
@@ -218,11 +230,3 @@ class login extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
- 
-
-// Color(0xFF313033)

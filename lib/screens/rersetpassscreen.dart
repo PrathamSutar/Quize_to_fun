@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_to_fun/screens/login.dart';
 
-import '../colors/colors.dart';
+import 'package:quiz_to_fun/colors/colors.dart';
+
 import '../widgets/cutomtext.dart';
 import '../widgets/textfield.dart';
 
-class passwordscreen extends StatelessWidget {
-  const passwordscreen({super.key});
+class resetpassscreen extends StatelessWidget {
+  const resetpassscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +33,7 @@ class passwordscreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     customtext(
-                        fontsize: 14,
-                        color: purpulecolor,
-                        fontWeight: FontWeight.w400,
-                        fontfamily: 'Inter',
-                        text: "Step 2/3"),
-                        SizedBox(height: 5,),
-                    customtext(
-                        text: "Create a password",
+                        text: "Reset Password",
                         fontsize: 24,
                         color: whitecolor,
                         fontWeight: FontWeight.w500,
@@ -51,7 +44,7 @@ class passwordscreen extends StatelessWidget {
                     customtext(
                       color: textcolor,
                       text:
-                          "Let’s put a little security in place, create a password.",
+                          "Let’s put a little security in place,reset your password.",
                       fontWeight: FontWeight.w400,
                       fontfamily: 'Inter',
                       fontsize: 16,
@@ -93,9 +86,13 @@ class passwordscreen extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                         Icon(Icons.check_circle_outline_rounded, color: greenishcolor,),
-                                                     SizedBox(width: 3,),
-
+                        Icon(
+                          Icons.check_circle_outline_rounded,
+                          color: greenishcolor,
+                        ),
+                        SizedBox(
+                          width: 3,
+                        ),
                         customtext(
                             fontsize: 14,
                             color: greenishcolor,
@@ -104,35 +101,46 @@ class passwordscreen extends StatelessWidget {
                             text: "At least one uppercase letter"),
                       ],
                     ),
-SizedBox(height: 5,),
-
-                         Row(
-                           children: [
-                            Icon(Icons.check_circle_outline_rounded, color: chekboxcolor,),
-                            SizedBox(width: 3,),
-                             customtext(
-                        fontsize: 14,
-                        color: purpulecolor,
-                        fontWeight: FontWeight.w700,
-                        fontfamily: 'Nunito Sans',
-                        text: "Min. 8 characters"),
-                           ],
-                         ),
-SizedBox(height: 5,),
-
-                         Row(
-                           children: [
-                             Icon(Icons.check_circle_outline_rounded, color: chekboxcolor,),
-                                                         SizedBox(width: 3,),
-
-                             customtext(
-                        fontsize: 14,
-                        color: purpulecolor,
-                        fontWeight: FontWeight.w700,
-                        fontfamily: 'Nunito Sans',
-                        text: "At least one number or  symbol"),
-                           ],
-                         ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.check_circle_outline_rounded,
+                          color: chekboxcolor,
+                        ),
+                        SizedBox(
+                          width: 3,
+                        ),
+                        customtext(
+                            fontsize: 14,
+                            color: purpulecolor,
+                            fontWeight: FontWeight.w700,
+                            fontfamily: 'Nunito Sans',
+                            text: "Min. 8 characters"),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.check_circle_outline_rounded,
+                          color: chekboxcolor,
+                        ),
+                        SizedBox(
+                          width: 3,
+                        ),
+                        customtext(
+                            fontsize: 14,
+                            color: purpulecolor,
+                            fontWeight: FontWeight.w700,
+                            fontfamily: 'Nunito Sans',
+                            text: "At least one number or  symbol"),
+                      ],
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -156,29 +164,8 @@ SizedBox(height: 5,),
                                 MaterialStateProperty.all(purpulecolor),
                           ),
                           onPressed: () {},
-                          child: Text("Proceed")),
+                          child: Text("Reset Password")),
                     ),
-                    SizedBox(height: 20),
-                    Column(
-                      children: [
-                        customtext(
-                            fontsize: 12,
-                            color: whitecolor,
-                            fontWeight: FontWeight.w400,
-                            fontfamily: 'Inter',
-                            text: "By  creating a Quiz2Fun account you agree to all of "),
-SizedBox(height: 5,),
-    customtext(
-                            fontsize: 12,
-                            color: whitecolor,
-                            fontWeight: FontWeight.w400,
-                            fontfamily: 'Inter',
-                            text: "Quiz2Fun terms and conditions."),                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                   
                   ],
                 ),
               ],

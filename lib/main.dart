@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_to_fun/screens/forgotpassOTP.dart';
+import 'package:quiz_to_fun/screens/forgotpasswordscreen.dart';
+import 'package:quiz_to_fun/screens/login.dart';
+import 'package:quiz_to_fun/screens/passwordscreen.dart';
+import 'package:quiz_to_fun/screens/registerscreen.dart';
+import 'package:quiz_to_fun/screens/rersetpassscreen.dart';
 import 'package:quiz_to_fun/screens/splash.dart';
 
 void main() {
