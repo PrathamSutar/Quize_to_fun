@@ -1,8 +1,10 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:quiz_to_fun/screens/forgotpassOTP.dart';
 import 'package:quiz_to_fun/screens/forgotpasswordscreen.dart';
 import 'package:quiz_to_fun/screens/login.dart';
-import 'package:quiz_to_fun/screens/passwordscreen.dart';
+import 'package:quiz_to_fun/screens/createpasswordscreen.dart';
 import 'package:quiz_to_fun/screens/registerscreen.dart';
 import 'package:quiz_to_fun/screens/rersetpassscreen.dart';
 import 'package:quiz_to_fun/screens/splash.dart';
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: splash(),
+      home: const splash(),
     );
   }
 }

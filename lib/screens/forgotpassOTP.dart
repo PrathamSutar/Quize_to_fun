@@ -5,8 +5,6 @@ import 'package:quiz_to_fun/screens/login.dart';
 import 'package:quiz_to_fun/widgets/cutomtext.dart';
 import 'package:quiz_to_fun/widgets/otpbox.dart';
 
-import '../widgets/textfield.dart';
-
 class forgotpassOTP extends StatelessWidget {
   const forgotpassOTP({super.key});
 
@@ -54,7 +52,8 @@ class forgotpassOTP extends StatelessWidget {
                     SizedBox(
                       height: 19,
                     ),
-                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         customtext(
                             fontsize: 12,
@@ -62,23 +61,28 @@ class forgotpassOTP extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             fontfamily: 'Inter',
                             text: "OTP Verification"),
-
-                            customtext(fontsize: 12, color: purpulecolor, fontWeight: FontWeight.w600, fontfamily: 'inter', text: "01:10")
+                        customtext(
+                            fontsize: 12,
+                            color: purpulecolor,
+                            fontWeight: FontWeight.w600,
+                            fontfamily: 'inter',
+                            text: "01:10")
                       ],
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                       otpbox(),
-                   otpbox(),
-                   otpbox(),
-                   otpbox(),
-                   otpbox(),
-                   otpbox(),
-                    ],
-                  ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        otpbox(),
+                        otpbox(),
+                        otpbox(),
+                        otpbox(),
+                        otpbox(),
+                        otpbox(),
+                      ],
+                    ),
                     SizedBox(
                       height: 40,
                     ),
@@ -103,17 +107,22 @@ class forgotpassOTP extends StatelessWidget {
                           ),
                           onPressed: () {},
                           child: Text("Verify OTP")),
-
-                          
                     ),
                     SizedBox(
-                      height:30 ,
-
+                      height: 30,
                     ),
-
-                    InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => login(),)),
-                      
-                      child: customtext(fontsize: 16, color: purpulecolor, fontWeight: FontWeight.w600, fontfamily: 'inter', text: "Back To Login"))
+                    InkWell(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => login(),
+                            )),
+                        child: customtext(
+                            fontsize: 16,
+                            color: purpulecolor,
+                            fontWeight: FontWeight.w600,
+                            fontfamily: 'inter',
+                            text: "Back To Login"))
                   ],
                 ),
               ],

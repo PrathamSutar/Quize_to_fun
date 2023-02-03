@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_to_fun/screens/login.dart';
-import 'package:quiz_to_fun/screens/passwordscreen.dart';
+import 'package:quiz_to_fun/screens/createpasswordscreen.dart';
 
 import '../colors/colors.dart';
 import '../widgets/cutomtext.dart';
@@ -11,6 +11,10 @@ class registerscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController _RegiFullNamectr = TextEditingController();
+    final TextEditingController _RegiUserNameEmailctr = TextEditingController();
+    final TextEditingController _RegiEmailctr = TextEditingController();
+
     return Scaffold(
       backgroundColor: backgroundcolor,
       body: SingleChildScrollView(
@@ -72,6 +76,7 @@ class registerscreen extends StatelessWidget {
                       height: 10,
                     ),
                     customtextfield(
+                      Controller: _RegiFullNamectr,
                       hinttext: "Jhon Alex",
                     ),
                     SizedBox(
@@ -86,7 +91,9 @@ class registerscreen extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    customtextfield(hinttext: "Enter Your User Name"),
+                    customtextfield(
+                        Controller: _RegiUserNameEmailctr,
+                        hinttext: "Enter Your User Name"),
                     SizedBox(
                       height: 15,
                     ),
@@ -99,7 +106,9 @@ class registerscreen extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    customtextfield(hinttext: "example@mail.com"),
+                    customtextfield(
+                        Controller: _RegiEmailctr,
+                        hinttext: "example@mail.com"),
                     SizedBox(
                       height: 15,
                     ),
@@ -146,7 +155,8 @@ class registerscreen extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => passwordscreen(),
+                                      builder: (context) =>
+                                          Createpasswordscreen(),
                                     ));
                               },
                               child: Text("Proceed")),

@@ -6,7 +6,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:quiz_to_fun/colors/colors.dart';
 
 class otpbox extends StatelessWidget {
-  const otpbox({super.key});
+  final controller;
+  const otpbox({super.key, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,8 @@ class otpbox extends StatelessWidget {
         onChanged: (value) {
           if (value.length == 1) {
             FocusScope.of(context).nextFocus();
+          } else if (value.length == 0) {
+            FocusScope.of(context).previousFocus();
           }
         },
         style: Theme.of(context).textTheme.headline6,

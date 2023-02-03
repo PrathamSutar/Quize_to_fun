@@ -10,6 +10,8 @@ class forgotpasswordscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController _ForgPassEmailctr = TextEditingController();
+
     return Scaffold(
       backgroundColor: backgroundcolor,
       body: SingleChildScrollView(
@@ -62,6 +64,7 @@ class forgotpasswordscreen extends StatelessWidget {
                       height: 10,
                     ),
                     customtextfield(
+                      Controller: _ForgPassEmailctr,
                       icon: Icons.visibility,
                       iconcolor: Colors.white,
                       hinttext: "@example",
@@ -89,7 +92,11 @@ class forgotpasswordscreen extends StatelessWidget {
                                 MaterialStateProperty.all(purpulecolor),
                           ),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder:(context) => forgotpassOTP(), ));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => forgotpassOTP(),
+                                ));
                           },
                           child: Text("Send OTP")),
                     ),

@@ -14,6 +14,9 @@ class login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController _LogEmailctr = TextEditingController();
+    final TextEditingController _LogPassctr = TextEditingController();
+
     return Scaffold(
       backgroundColor: backgroundcolor,
       body: SingleChildScrollView(
@@ -65,6 +68,7 @@ class login extends StatelessWidget {
                       height: 10,
                     ),
                     customtextfield(
+                      Controller: _LogEmailctr,
                       hinttext: "@example",
                     ),
                     SizedBox(
@@ -79,14 +83,21 @@ class login extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    customtextfield(hinttext: "Enter Your Password"),
+                    customtextfield(
+                        Controller: _LogPassctr,
+                        hinttext: "Enter Your Password"),
                     SizedBox(
                       height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => forgotpasswordscreen(),)),
+                        InkWell(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => forgotpasswordscreen(),
+                              )),
                           child: customtext(
                               fontsize: 14,
                               color: purpulecolor,
@@ -171,7 +182,6 @@ class login extends StatelessWidget {
                           ),
                         ),
                         InkWell(
-                          
                           child: Container(
                             decoration: BoxDecoration(
                               color: Colors.black,
@@ -210,7 +220,12 @@ class login extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => registerscreen(),)),
+                        InkWell(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => registerscreen(),
+                              )),
                           child: customtext(
                               fontsize: 14,
                               color: purpulecolor,

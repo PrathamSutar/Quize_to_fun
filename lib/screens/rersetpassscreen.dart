@@ -10,6 +10,9 @@ class resetpassscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController _resetPassctr = TextEditingController();
+    final TextEditingController _confirmresetPassctr = TextEditingController();
+
     return Scaffold(
       backgroundColor: backgroundcolor,
       body: SingleChildScrollView(
@@ -62,6 +65,7 @@ class resetpassscreen extends StatelessWidget {
                       height: 10,
                     ),
                     customtextfield(
+                      Controller: _resetPassctr,
                       icon: Icons.visibility,
                       iconcolor: Colors.white,
                       hinttext: "Enter password",
@@ -79,6 +83,7 @@ class resetpassscreen extends StatelessWidget {
                       height: 10,
                     ),
                     customtextfield(
+                        Controller: _confirmresetPassctr,
                         icon: Icons.visibility,
                         hinttext: "Confirm your password"),
                     SizedBox(
